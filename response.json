@@ -1,0 +1,32 @@
+{
+    "1":{
+        "question": "multiple choice question",
+        "options":{
+            "a":"1st choice",
+            "b": "2nd choice",
+            "c": "3rd choice",
+            "d": "4th choice"
+        },
+        "correct": "correct answer"
+    },
+    "2":{
+        "question": "multiple choice question",
+        "options":{
+            "a":"1st choice",
+            "b": "2nd choice",
+            "c": "3rd choice",
+            "d": "4th choice"
+        },
+        "correct": "correct answer"
+    },
+    "3":{
+        "question": "multiple choice question",
+        "options":{
+            "a":"1st choice",
+            "b": "2nd choice",
+            "c": "3rd choice",
+            "d": "4th choice"
+        },
+        "correct": "correct answer"
+    }
+}
