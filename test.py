@@ -11,7 +11,7 @@ with open(r"D:\MCQ Generator\response.json", "r") as file:
 def read_file(file):
     if file.endswith(".pdf"):
         try:
-            pdf_reader = PyPDF2(file)
+            pdf_reader = PyPDF2.PdfReader(file)
             text = ""
             for page in pdf_reader.pages:
                 text += page.extract_text()
@@ -26,7 +26,7 @@ def read_file(file):
     else:
         raise Exception("Unwanted file format")
 
-text = read_file(r"D:\MCQ Generator\data.txt")
+text = read_file(r"D:\MCQ Generator\Attention is all you need.pdf")
 response = final_chain(
                     {
                         "text":text,
@@ -39,6 +39,8 @@ response = final_chain(
 
 quiz_dict = ast.literal_eval(response.get('quiz'))
 
+# print(quiz_dict)
+# print(type(quiz_dict))
 
 
 formatted_data = []
@@ -53,9 +55,9 @@ for key, value in quiz_dict.items():
     formatted_data.append(question_data)
 
 import pandas as pd
-
 df = pd.DataFrame(formatted_data)
 print(df)
+
 
 
 

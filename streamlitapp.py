@@ -44,17 +44,14 @@ with st.form("user_inputs"):
             except Exception as e:
                 st.write("Error :", e)
             else:
-                if isinstance(response, dict):
-                    quiz = response.get('quiz',None)
-                    if quiz is not None:
-                        table_data = get_table_data(quiz)
-                        if table_data is not None:
-                            df = pd.DataFrame(table_data)
-                            st.table(df)
-                            st.text_area("Review ", value=response['review'])
-                        else:
-                            st.error("Error in table data")
-                else:
-                    st.write(response)
+                quiz = response.get('quiz')
+                if quiz is not None:
+                    table_data = get_table_data(quiz)
+                    if table_data is not None:
+                        df = pd.DataFrame(table_data)
+                        st.table(df)
+                        st.text_area("Review ", value=response['review'])
+                    else:
+                        st.error("Error in table data")
 
 

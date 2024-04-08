@@ -21,10 +21,8 @@ You are an expert MCQ maker. Based on the above text , you are to create \
 {number} MCQ questions for {subject} students in {tone} tone.
 Avoid asking questions from the text that are related to date.
 Make sure the questions are not repeated and also confirm the question along with answer \
-from the given text. You are to provide output in RESPONE_JSON format. 
+from the given text. You are to provide output in {response_json} format. 
 Make sure you create {number} questions.
-### RESPONSE_JSON
-{response_json}
 """
 
 quiz_template = PromptTemplate(
@@ -43,7 +41,6 @@ the capabilites of the students. Make sure to update the question and also maint
 provided tone.
 ## MCQ quiz questions
 {quiz}
-Provid the MCQ quiz question in a dictionary.
 """
 
 evaluate_prompt = PromptTemplate(
